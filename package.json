@@ -1,0 +1,59 @@
+{
+  "name": "@ndaneta/llm-guardrails-kit",
+  "version": "0.1.0",
+  "description": "Composable, deterministic guardrails for LLM apps and agents: prompt-injection scoring, reversible PII redaction with checksum validation, tool-call policy, schema-enforced outputs and ledger-checked claims.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "ci": "npm run typecheck && npm test -- --coverage && npm run build",
+    "prepublishOnly": "npm run ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndanetaadmire-debug/llm-guardrails-kit.git"
+  },
+  "keywords": [
+    "llm",
+    "guardrails",
+    "prompt-injection",
+    "pii",
+    "ai-safety",
+    "agents",
+    "typescript"
+  ],
+  "author": "Admire T. Ndaneta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndanetaadmire-debug/llm-guardrails-kit/issues"
+  },
+  "homepage": "https://github.com/ndanetaadmire-debug/llm-guardrails-kit#readme",
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^5.1.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  },
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "zod": "^4.0.0"
+  }
+}
